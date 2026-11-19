@@ -46,21 +46,21 @@
   const pathGenerator = d3.geoPath().projection(projection);
 
   // Classic Scientific Blue-White-Red (RdBu_r) colormap matching matplotlib / ColorBrewer
+  // Strictly symmetric domain centered on 0 cm (-35 cm to +35 cm)
   const oceanColorScale = d3.scaleLinear()
-    .domain([-35, -22, -12, -5, -1.5, 0, 1.5, 5, 12, 22, 38, 55])
+    .domain([-35, -24, -14, -6, -2, 0, 2, 6, 14, 24, 35])
     .range([
-      "#053061", // Deep Navy Blue (< -35 cm)
-      "#2166ac", // Rich Cobalt Blue (-22 cm)
-      "#4393c3", // Medium Steel Blue (-12 cm)
-      "#92c5de", // Light Sky Blue (-5 cm)
-      "#d1e5f0", // Very Pale Ice Blue (-1.5 cm)
+      "#053061", // Deep Navy Blue (<= -35 cm)
+      "#2166ac", // Rich Cobalt Blue (-24 cm)
+      "#4393c3", // Medium Steel Blue (-14 cm)
+      "#92c5de", // Light Sky Blue (-6 cm)
+      "#d1e5f0", // Very Pale Ice Blue (-2 cm)
       "#ffffff", // Pure White Baseline (0 cm)
-      "#fddbc7", // Very Pale Peach (+1.5 cm)
-      "#f4a582", // Coral Pink (+5 cm)
-      "#d6604d", // Medium Coral Red (+12 cm)
-      "#b2182b", // Crimson Red (+22 cm)
-      "#67001f", // Dark Maroon (+38 cm)
-      "#400010"  // Deepest Wine Red (> +55 cm)
+      "#fddbc7", // Very Pale Peach (+2 cm)
+      "#f4a582", // Coral Pink (+6 cm)
+      "#d6604d", // Medium Coral Red (+14 cm)
+      "#b2182b", // Crimson Red (+24 cm)
+      "#67001f"  // Dark Maroon (>= +35 cm)
     ])
     .clamp(true);
 

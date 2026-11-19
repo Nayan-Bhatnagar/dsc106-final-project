@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rising Tides: CMIP6 Regional Sea Level Projections</title>
+  <title>CMIP6 Sea Level Rise Explorer</title>
   <link rel="stylesheet" href="global.css" />
   <!-- D3.js v7, TopoJSON Client, and Scrollama -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -17,11 +17,29 @@
        ======================================================== -->
   <header class="hero-section">
     <div class="hero-content">
-      <span class="hero-tag">CMIP6 Sea Level Visualization</span>
-      <h1 class="hero-title">Rising Tides: A Tale of Two Futures</h1>
+      <h1 class="hero-title">The Uneven Nature of Sea Level Rise</h1>
       <p class="hero-subtitle">
         Sea level rise will not happen uniformly across the globe. Explore how different emissions projections under CMIP6 models shape the future of our oceans and coastlines.
       </p>
+
+      <!-- COLLAPSIBLE WRITE-UP SECTION -->
+      <details class="writeup-toggle">
+        <summary class="writeup-btn">
+          <span class="btn-text">Prototype Status (Write-Up)</span>
+          <span class="toggle-icon">▼</span>
+        </summary>
+        <div class="writeup-content">
+          <h3>What have we done so far?</h3>
+          <p>
+            We built a scrollytelling page around CESM2 sea surface height (<code>zos</code>) from CMIP6. The main map shows sea level change against a 1995-2014 baseline on a blue-to-red scale. Readers can switch between SSP1-2.6 and SSP5-8.5, and between 2050 and 2100. They can also turn on a difference view that shows how much worse the high-emissions future is. An animate button flips between the two scenarios so the gap is easy to see. As you scroll, the map zooms to regions like the US coasts, Hawaii, Bangladesh, and the Pacific atolls, and the numbers below the map update for each one.
+          </p>
+          <h3>What will be the hardest part?</h3>
+          <p>
+            We would say that our main difficulty is that we want to also add panning and zooming into the map, but the problem is how resource intensive it could be. Since our interactive visual is already a bit laggy, adding new features might make it worse. Making the website run smoother will be hard due to the large amount of data we are using, and reducing the resolution of the map would lower quality and make it look more pixelated. Therefore, we plan to try to find more efficient ways to load in and update the data before adding panning and zooming to allow the user to explore the map on their own.
+          </p>
+        </div>
+      </details>
+
       <div class="scroll-prompt">
         <span>Scroll down to begin</span>
         <div class="scroll-arrow">↓</div>
@@ -57,10 +75,10 @@
       <div class="story-step" data-step="east-coast">
         <div class="card-glass">
           <span class="step-num">Chapter 02</span>
-          <h2 class="step-title">US East Coast: Accelerated Atlantic</h2>
+          <h2 class="step-title">US East Coast</h2>
           <p class="step-body">
             <!-- STORY BEAT: US East Coast -->
-            Cities along the US East Coast face sea level rise significantly higher than the global average. Water ends up piling up against the Atlantic coast, causing more land to get submerged.
+            The US East Coast faces sea level rise significantly higher than the global average. Water ends up piling up against the Atlantic coast, causing more land to get submerged.
           </p>
         </div>
       </div>
@@ -71,10 +89,10 @@
       <div class="story-step" data-step="gulf-coast">
         <div class="card-glass">
           <span class="step-num">Chapter 03</span>
-          <h2 class="step-title">Gulf of Mexico: Rapid Subsidence</h2>
+          <h2 class="step-title">Gulf of Mexico</h2>
           <p class="step-body">
             <!-- STORY BEAT: US Gulf Coast -->
-            The Gulf Coast experiences the fastest relative sea level rise in North America. It also shows high differences between the two projections.
+            The Gulf Coast experiences the fastest relative sea level rise in North America. It also shows high differences between the two projections, showing how its fate is closely tied with global emissions.
           </p>
         </div>
       </div>
@@ -85,10 +103,10 @@
       <div class="story-step" data-step="west-coast">
         <div class="card-glass">
           <span class="step-num">Chapter 04</span>
-          <h2 class="step-title">US West Coast: Bluffs & Estuaries</h2>
+          <h2 class="step-title">US West Coast</h2>
           <p class="step-body">
             <!-- STORY BEAT: US West Coast -->
-            Steep cliffs along the Pacific coastline prevent major inland flooding, but low-lying bays like the San Francisco Bay still face some risks.
+            The situation is not as bad along the Pacific coastline, especially since its cliffs prevent major inland flooding, but its low-lying bays like the San Francisco Bay still face some risks.
           </p>
         </div>
       </div>
@@ -99,10 +117,10 @@
       <div class="story-step" data-step="hawaii">
         <div class="card-glass">
           <span class="step-num">Chapter 05</span>
-          <h2 class="step-title">Hawaii: Isolated Island Vulnerability</h2>
+          <h2 class="step-title">Hawaii</h2>
           <p class="step-body">
             <!-- STORY BEAT: Hawaii -->
-            In Hawaii, lots of infrastructure sits only a few feet above the water. Rising seas erode beaches and cause flooding.
+            In Hawaii, lots of infrastructure sits only a few feet above the water, making the isolated island vulnerable to sea level rise. The water near it faces relatively high sea levels, which can erode beaches and cause flooding.
           </p>
         </div>
       </div>
@@ -113,7 +131,7 @@
       <div class="story-step" data-step="bangladesh">
         <div class="card-glass">
           <span class="step-num">Chapter 06</span>
-          <h2 class="step-title">Bangladesh: The Mega-Delta Crisis</h2>
+          <h2 class="step-title">Bangladesh</h2>
           <p class="step-body">
             <!-- STORY BEAT: Bangladesh -->
             In the delta near Bangladesh, rising seas threaten tens of millions of people. Ocean water contaminates soil and drinking water, creating the potential for a humanitarian catastrophe.
@@ -127,10 +145,10 @@
       <div class="story-step" data-step="pacific-atolls">
         <div class="card-glass">
           <span class="step-num">Chapter 07</span>
-          <h2 class="step-title">Pacific Atolls: Existential Ground Zero</h2>
+          <h2 class="step-title">Pacific Atolls</h2>
           <p class="step-body">
             <!-- STORY BEAT: Pacific Atolls -->
-            Low elevation nations like Tuvalu and Kiribati are only two meters above current tides. Under high emissions, rising oceans will wash over entire islands, threatening these countries' existence.
+            Low elevation nations like Tuvalu and Kiribati are only meters above current tides. Under high emissions, rising oceans will wash over entire islands, threatening these countries' existence.
           </p>
         </div>
       </div>
@@ -144,7 +162,7 @@
           <h2 class="step-title">The Path Ahead: Divergence by 2100</h2>
           <p class="step-body">
             <!-- STORY BEAT: Conclusion -->
-            The gap between large-scale climate action (SSP1-2.6) and high amounts of emissions (SSP5-8.5) represents the difference between manageable adaptation and catastrophic loss of coastal communities worldwide.
+            The gap between large-scale climate action (SSP1-2.6) and high amounts of emissions (SSP5-8.5) represents the difference between being able to contain rising tides and being pulled under the waves.
           </p>
         </div>
       </div>
@@ -229,7 +247,7 @@
             <span class="legend-subtitle">Dynamic Sea Level Anomaly (cm vs Baseline)</span>
             <div class="color-ramp-bar"></div>
             <div class="ramp-labels">
-              <span class="ramp-label left">−30 cm</span>
+              <span class="ramp-label left">−35 cm</span>
               <span class="ramp-label center">0 cm</span>
               <span class="ramp-label right">+35 cm</span>
             </div>
@@ -243,30 +261,9 @@
   <!-- ========================================================
        FOOTER & METHODOLOGY
        ======================================================== -->
-  <section class="prototype-notes">
-  <h2>Prototype Status</h2>
-
-  <h3>What have we done so far?</h3>
-  <p>
-    We built a scrollytelling page around CESM2 sea surface height (<code>zos</code>) from CMIP6.
-    The main map shows sea level change against a 1995-2014 baseline on a blue-to-red scale.
-    Readers can switch between SSP1-2.6 and SSP5-8.5, and between 2050 and 2100.
-    They can also turn on a difference view that shows how much worse the high-emissions future is.
-    An animate button flips between the two scenarios so the gap is easy to see.
-    As you scroll, the map zooms to regions like the US coasts, Hawaii, Bangladesh, and the Pacific atolls, and the numbers below the map update for each one.
-  </p>
-
-  <h3>What will be the hardest part?</h3>
-  <p>The hardest part will be building the year slider. Currently, we only have 2 snapshots which are 2050 and 2100, so for the slider we would need to have data for every year.
-    The full model output will be big, so we would also be required to shrink it with the page still being able to load properly. Some other things with the slider would also be making
-    sure the map colors update smoothly and as they're supposed to along with the slider. Lastly, the slider would also have to be compatible with the scrolling story so that they won't clash with what the map will show.
-  </p>
-
-</section>
   <footer class="site-footer">
     <div class="footer-inner">
-      <p><strong>DSC 106 Data Visualization Final Project</strong></p>
-      <p>Built exclusively with HTML, CSS, JavaScript, and <strong>D3.js</strong> (v7) + Scrollama.js.</p>
+      <p><strong>CMIP6 Sea Level Rise Explorer</strong></p>
       <p class="data-attribution">
         Data source: CMIP6 Climate Model Intercomparison Project Phase 6 (CESM2 model, table Omon, variable 'zos' sea surface height above geoid) via Google Cloud Public Datasets.
       </p>
