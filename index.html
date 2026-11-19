@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rising Tides: CMIP6 Regional Sea Level Projections</title>
+  <link rel="stylesheet" href="global.css" />
+  <!-- D3.js v7, TopoJSON Client, and Scrollama -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+</head>
+<body>
+
+  <!-- ========================================================
+       HERO / INTRODUCTION HEADER
+       ======================================================== -->
+  <header class="hero-section">
+    <div class="hero-content">
+      <span class="hero-tag">CMIP6 Sea Level Visualization</span>
+      <h1 class="hero-title">Rising Tides: A Tale of Two Futures</h1>
+      <p class="hero-subtitle">
+        Sea level rise will not happen uniformly across the globe. Explore how different emissions projections under CMIP6 models shape the future of our oceans and coastlines.
+      </p>
+      <div class="scroll-prompt">
+        <span>Scroll down to begin</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       SCROLLYTELLING MAIN CONTAINER
+       ======================================================== -->
+  <main id="scrolly-container">
+    
+    <!-- NARRATIVE STORY SCROLLING STEPS -->
+    <article class="narrative-scroller" id="narrative-scroller">
+      
+      <!-- ========================================================
+           STORY BEAT 1: GLOBAL OVERVIEW
+           ======================================================== -->
+      <div class="story-step active" data-step="global">
+        <div class="card-glass">
+          <span class="step-num">Chapter 01</span>
+          <h2 class="step-title">The Global Unequal Rise</h2>
+          <p class="step-body">
+            <!-- STORY BEAT: Global Overview -->
+            Sea level rise does not happen globally at the same level. Thermal expansion of ocean water and changes from melting ice sheets cause sea levels to vary dramatically between different parts of the world.
+          </p>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           STORY BEAT 2: US EAST COAST
+           ======================================================== -->
+      <div class="story-step" data-step="east-coast">
+        <div class="card-glass">
+          <span class="step-num">Chapter 02</span>
+          <h2 class="step-title">US East Coast: Accelerated Atlantic</h2>
+          <p class="step-body">
+            <!-- STORY BEAT: US East Coast -->
+            Cities along the US East Coast face sea level rise significantly higher than the global average. Water ends up piling up against the Atlantic coast, while the land itself naturally sinks.
+          </p>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           STORY BEAT 3: US GULF COAST
+           ======================================================== -->
+      <div class="story-step" data-step="gulf-coast">
+        <div class="card-glass">
+          <span class="step-num">Chapter 03</span>
+          <h2 class="step-title">Gulf of Mexico: Rapid Subsidence</h2>
+          <p class="step-body">
+            <!-- STORY BEAT: US Gulf Coast -->
+            The Gulf Coast experiences the fastest relative sea level rise in North America. Flat topography, deltaic sediment compaction, and groundwater/oil extraction combine to submerge wetlands at alarming rates.
+          </p>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           STORY BEAT 4: US WEST COAST
+           ======================================================== -->
+      <div class="story-step" data-step="west-coast">
+        <div class="card-glass">
+          <span class="step-num">Chapter 04</span>
+          <h2 class="step-title">US West Coast: Bluffs & Estuaries</h2>
+          <p class="step-body">
+            <!-- STORY BEAT: US West Coast -->
+            Steep cliffs along the Pacific coastline prevent broad inland flooding, but low-lying bays like San Francisco Bay and Puget Sound face acute risk during king tides and El Niño wave surges.
+          </p>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           STORY BEAT 5: HAWAII & CENTRAL PACIFIC
+           ======================================================== -->
+      <div class="story-step" data-step="hawaii">
+        <div class="card-glass">
+          <span class="step-num">Chapter 05</span>
+          <h2 class="step-title">Hawaii: Isolated Island Vulnerability</h2>
+          <p class="step-body">
+            <!-- STORY BEAT: Hawaii -->
+            In the Hawaiian Islands, dense tourism infrastructure, critical coastal highways, and airports sit mere feet above high water. Rising seas lead to chronic beach erosion and saltwater flooding from beneath the ground.
+          </p>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           STORY BEAT 6: BANGLADESH & BAY OF BENGAL
+           ======================================================== -->
+      <div class="story-step" data-step="bangladesh">
+        <div class="card-glass">
+          <span class="step-num">Chapter 06</span>
+          <h2 class="step-title">Bangladesh: The Mega-Delta Crisis</h2>
+          <p class="step-body">
+            <!-- STORY BEAT: Bangladesh -->
+            In the Ganges-Brahmaputra delta, rising seas threaten tens of millions of people. Ocean water infiltrates agricultural soils and drinking water, creating immense pressure on human displacement.
+          </p>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           STORY BEAT 7: PACIFIC ATOLL NATIONS
+           ======================================================== -->
+      <div class="story-step" data-step="pacific-atolls">
+        <div class="card-glass">
+          <span class="step-num">Chapter 07</span>
+          <h2 class="step-title">Pacific Atolls: Existential Ground Zero</h2>
+          <p class="step-body">
+            <!-- STORY BEAT: Pacific Atolls -->
+            Low-lying nations like Tuvalu and Kiribati sit barely two meters above current tides. Under high emissions, rising oceans will contaminate freshwater aquifers and wash over entire islands, threatening sovereign statehood.
+          </p>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           STORY BEAT 8: SYNTHESIS / CONCLUSION
+           ======================================================== -->
+      <div class="story-step" data-step="conclusion">
+        <div class="card-glass">
+          <span class="step-num">Chapter 08</span>
+          <h2 class="step-title">The Path Ahead: Divergence by 2100</h2>
+          <p class="step-body">
+            <!-- STORY BEAT: Conclusion -->
+            The gap between aggressive climate action (SSP1-2.6) and unchecked emissions (SSP5-8.5) represents the difference between manageable adaptation and catastrophic loss of coastal communities worldwide.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- STICKY GRAPHIC VIEWPORT (Pins to screen) -->
+    <section class="sticky-graphic" id="sticky-graphic">
+      
+      <!-- 1. TOP INTERACTIVE CONTROLS DOCK (Outside the map) -->
+      <header class="top-controls-dock" aria-label="Interactive Climate Controls">
+        <div class="control-group">
+          <label class="control-label">CMIP6 Scenario</label>
+          <div class="pill-toggle scenario-toggle" role="radiogroup">
+            <button class="toggle-btn active" data-scenario="ssp126" title="Paris Agreement / Low Emissions">
+              SSP1-2.6 <span class="badge-tag green">Low</span>
+            </button>
+            <button class="toggle-btn" data-scenario="ssp585" title="Worst-Case / Fossil-Fueled Development">
+              SSP5-8.5 <span class="badge-tag red">High</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Projection Year</label>
+          <div class="pill-toggle year-toggle" role="radiogroup">
+            <button class="toggle-btn" data-year="2050">2050</button>
+            <button class="toggle-btn active" data-year="2100">2100</button>
+          </div>
+        </div>
+
+        <div class="control-group action-group">
+          <button id="btn-difference" class="action-btn" title="Display spatial sea level anomaly difference (SSP5-8.5 minus SSP1-2.6)">
+            <span class="icon">⚖</span> Show Difference
+          </button>
+          <button id="btn-animate" class="action-btn highlight" title="Morph smoothly between scenarios">
+            <span class="icon">▶</span> Animate Transition
+          </button>
+        </div>
+      </header>
+
+      <!-- 2. FULLY UNOBSTRUCTED SVG MAP VIEWPORT -->
+      <div id="map-container">
+        <svg id="sea-level-map"></svg>
+      </div>
+
+      <!-- 3. BOTTOM DASHBOARD BAR (Outside the map) -->
+      <footer class="bottom-dashboard-bar">
+        <!-- LIVE METRIC SUMMARY -->
+        <aside class="live-metric-bar" aria-live="polite">
+          <div class="metric-item">
+            <span class="metric-caption">Region</span>
+            <span class="metric-value text-accent" id="metric-region">Global Ocean</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-caption">Sea Level vs 1995–2014</span>
+            <div class="metric-value">
+              <span id="metric-rise-cm">—</span> <span class="metric-unit">cm</span>
+              <span class="metric-sub" id="metric-rise-in"></span>
+            </div>
+          </div>
+          <div class="metric-item">
+            <span class="metric-caption">High vs Low Difference</span>
+            <div class="metric-value">
+              <span id="metric-diff-cm">—</span> <span class="metric-unit">cm</span>
+              <span class="metric-sub" id="metric-diff-in"></span>
+            </div>
+          </div>
+          <div class="metric-item">
+            <span class="metric-caption">Scenario Context</span>
+            <div class="metric-value">
+              <span class="vuln-pill" id="metric-vuln-pill">—</span>
+              <span class="metric-sub" id="metric-vuln-score"></span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- MAP LEGEND -->
+        <div class="map-legend" id="map-legend">
+          <div class="legend-title">CMIP6 Ocean Model</div>
+          <div class="legend-row">
+            <span class="legend-subtitle">Dynamic Sea Level Anomaly (cm vs Baseline)</span>
+            <div class="color-ramp-bar"></div>
+            <div class="ramp-labels">
+              <span class="ramp-label left">−30 cm</span>
+              <span class="ramp-label center">0 cm</span>
+              <span class="ramp-label right">+35 cm</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </section>
+  </main>
+
+  <!-- ========================================================
+       FOOTER & METHODOLOGY
+       ======================================================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p><strong>DSC 106 Data Visualization Final Project</strong></p>
+      <p>Built exclusively with HTML, CSS, JavaScript, and <strong>D3.js</strong> (v7) + Scrollama.js.</p>
+      <p class="data-attribution">
+        Data source: CMIP6 Climate Model Intercomparison Project Phase 6 (CESM2 model, table Omon, variable 'zos' sea surface height above geoid) via Google Cloud Public Datasets.
+      </p>
+    </div>
+  </footer>
+
+  <!-- MAIN D3 SCRIPT -->
+  <script src="main.js"></script>
+</body>
+</html>

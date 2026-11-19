@@ -1,0 +1,71 @@
+{
+  "shape": [
+    111,
+    384,
+    320
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        28,
+        96,
+        80
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": "NaN",
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "cell_measures": "area: areacello",
+    "cell_methods": "area: mean where sea time: mean",
+    "comment": "SSH",
+    "description": "This is the dynamic sea level, so should have zero global area mean. It should not include inverse barometer depressions from sea ice.",
+    "frequency": "mon",
+    "id": "zos",
+    "long_name": "Sea Surface Height Above Geoid",
+    "mipTable": "Omon",
+    "out_name": "zos",
+    "prov": "Omon ((isd.003))",
+    "realm": "ocean",
+    "standard_name": "sea_surface_height_above_geoid",
+    "time": "time",
+    "time_label": "time-mean",
+    "time_title": "Temporal mean",
+    "title": "Sea Surface Height Above Geoid",
+    "type": "real",
+    "units": "m",
+    "variable_id": "zos",
+    "coordinates": "lat lon",
+    "_FillValue": "AAAAAAAA+H8="
+  },
+  "dimension_names": [
+    "year",
+    "nlat",
+    "nlon"
+  ],
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}
